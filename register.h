@@ -4,8 +4,8 @@
 
 #define _BV(bit) (1 << (bit))
 
-#define SET_BIT(reg, bit) ((reg) |= _BV(bit))
-#define CLR_BIT(reg, bit) ((reg) &= ~_BV(bit)))
-#define GET_BIT(reg, bit) ((reg) >> (bit) & 0x1 )
+#define SET_BIT(reg, bit) do{(reg) |= _BV(bit);}while(0)
+#define CLR_BIT(reg, bit) do{(reg) &= ~_BV(bit);}while(0)
+#define GET_BIT(reg, bit) ((reg) >> (bit) & 0x1)
 
 #endif
